@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="972.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.MainViewController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="282.0" prefWidth="886.0" spacing="50.0" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane prefHeight="196.0" prefWidth="278.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="116.0" minWidth="10.0" prefWidth="104.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="139.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="rb_heroes" mnemonicParsing="false" onAction="#onSelectHeroes" text="Heroes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tipo_persoaje" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="rb_bestias" mnemonicParsing="false" onAction="#onSelectBestias" text="Bestias" toggleGroup="$tipo_persoaje" GridPane.columnIndex="1" />
+                  <Label text="Nombre" GridPane.rowIndex="1" />
+                  <TextField fx:id="txf_nombre" promptText="Ingrese Nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Tipo" GridPane.rowIndex="2" />
+                  <Label text="Vida" GridPane.rowIndex="3" />
+                  <Label text="Armadura" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="cb_raza" prefWidth="150.0" promptText="Seleccionar ..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txf_vida" promptText="Nivel de vida" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txf_armadura" promptText="Nivel de armadura" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button fx:id="btn_agregar" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionAgregar" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+            <VBox prefHeight="194.0" prefWidth="286.0" spacing="5.0">
+               <children>
+                  <Label text="Heroes" />
+                  <ListView fx:id="lv_heroes" prefHeight="236.0" prefWidth="276.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btn_subir_h" mnemonicParsing="false" onAction="#onActionSubirHeroe" text="Subir" />
+                        <Button fx:id="btn_bajar_h" mnemonicParsing="false" onAction="#onActionBajarHeroe" text="Bajar" />
+                        <Button fx:id="btn_eliminar_h" mnemonicParsing="false" onAction="#onActionEliminarHeroe" text="Eliminar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="194.0" prefWidth="287.0" spacing="5.0">
+               <children>
+                  <Label text="Bestias" />
+                  <ListView fx:id="lv_bestias" prefHeight="258.0" prefWidth="277.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btn_subir_b" mnemonicParsing="false" onAction="#onActionSubirBestias" text="Subir" />
+                        <Button fx:id="btn_bajar_b" mnemonicParsing="false" onAction="#onActionBajarBestia" text="Bajar" />
+                        <Button fx:id="btn_eliminar_b" mnemonicParsing="false" onAction="#onActionEliminarBestia" text="Eliminar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" spacing="80.0">
+         <children>
+            <Button fx:id="btn_lucha" mnemonicParsing="false" onAction="#onActionLucha" prefHeight="100.0" prefWidth="250.0" text="LUCHA" />
+            <ImageView fx:id="batalla_gif" fitHeight="149.0" fitWidth="273.0">
+               <image>
+                  <Image url="@../video/pelea.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_reinicio" mnemonicParsing="false" onAction="#onActionrReinicio" prefHeight="100.0" prefWidth="250.0" text="REINICIO" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="300.0" prefWidth="200.0">
+         <children>
+            <ListView fx:id="lv_detalle_lucha" prefHeight="400.0" prefWidth="864.0" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Personajes eliminados" />
+            <ListView fx:id="lv_eliminados" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </ListView>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>
