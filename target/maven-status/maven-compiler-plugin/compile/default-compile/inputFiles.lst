@@ -1,2 +1,9 @@
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/Aplicacion.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/AplicacionFx.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/BatallaController.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/BatallaViewController.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Bestias.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Heroes.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Personaje.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/RazaPersonajes.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/utils/EjercitoGenerator.java

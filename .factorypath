@@ -1,0 +1,14 @@
+<factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-base/23-ea+22/javafx-base-23-ea+22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-base/23-ea+22/javafx-base-23-ea+22-linux.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-controls/23-ea+22/javafx-controls-23-ea+22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-controls/23-ea+22/javafx-controls-23-ea+22-linux.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-graphics/23-ea+22/javafx-graphics-23-ea+22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-graphics/23-ea+22/javafx-graphics-23-ea+22-linux.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-fxml/23-ea+22/javafx-fxml-23-ea+22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-fxml/23-ea+22/javafx-fxml-23-ea+22-linux.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-media/23-ea+22/javafx-media-23-ea+22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/openjfx/javafx-media/23-ea+22/javafx-media-23-ea+22-linux.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/jfoenix/jfoenix/9.0.10/jfoenix-9.0.10.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>

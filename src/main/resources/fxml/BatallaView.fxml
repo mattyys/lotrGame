@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<Pane prefHeight="778.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.BatallaViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="972.0" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="282.0" prefWidth="886.0" spacing="50.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <GridPane prefHeight="196.0" prefWidth="278.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="116.0" minWidth="10.0" prefWidth="104.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="139.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Nombre" GridPane.rowIndex="1" />
+                        <TextField fx:id="txf_nombre" promptText="Ingrese Nombre" styleClass="txt-datos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Tipo" GridPane.rowIndex="2" />
+                        <Label text="Vida" GridPane.rowIndex="3" />
+                        <Label text="Armadura" GridPane.rowIndex="4" />
+                        <TextField fx:id="txf_vida" promptText="Nivel de vida" styleClass="txt-datos" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txf_armadura" promptText="Nivel de armadura" styleClass="txt-datos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <JFXRadioButton fx:id="rb_bestias" text="Bestias" GridPane.columnIndex="1">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tg_rb_tipo_personajes" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rb_heroes" text="Heroes" toggleGroup="$tg_rb_tipo_personajes">
+                           <selectedColor>
+                              <Color red="0.0784313753247261" green="0.062745101749897" blue="0.6117647290229797" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXButton fx:id="btn_agregar" onAction="#onActionAgregar" styleClass="btn-agregar" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXComboBox fx:id="cb_raza" prefHeight="26.0" prefWidth="151.0" promptText="Seleccionar ..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </GridPane>
+                  <VBox prefHeight="194.0" prefWidth="286.0" spacing="5.0">
+                     <children>
+                        <Label text="Heroes" />
+                        <JFXListView fx:id="lv_heroes" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                           <children>
+                              <JFXButton fx:id="btn_subir_h" onAction="#onActionSubirHeroe" styleClass="btn-lv-heroes" text="Subir" />
+                              <JFXButton fx:id="btn_bajar_h" onAction="#onAcionBajarHeroe" styleClass="btn-lv-heroes" text="Bajar" />
+                              <JFXButton fx:id="btn_eliminar_h" onAction="#onActionEliminarHeroe" styleClass="btn-lv-heroes" text="Eliminar" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="194.0" prefWidth="287.0" spacing="5.0">
+                     <children>
+                        <Label text="Bestias" />
+                        <JFXListView fx:id="lv_bestias" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="btn_subir_b" onAction="#onActionSubirBestia" styleClass="btn-lv-bestias" text="Subir" />
+                              <JFXButton fx:id="btn_bajar_b" onAction="#onAcionBajarBestia" styleClass="btn-lv-bestias" text="Bajar" />
+                              <JFXButton fx:id="btn_eliminar_b" onAction="#onActionEliminarBestia" styleClass="btn-lv-bestias" text="Eliminar" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="964.0" spacing="80.0">
+               <children>
+                  <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" ripplerFill="#2402fa" styleClass="btn-lucha" text="Lucha" textFill="#070707" />
+                  <JFXButton fx:id="btn" styleClass="btn-cargar" text="Cragar Ejercitos" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="200.0" prefWidth="972.0">
+               <children>
+                  <JFXListView fx:id="lv_detalle_lucha" prefHeight="169.0" prefWidth="962.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Personajes eliminados">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding></Label>
+                  <JFXListView fx:id="lv_eliminados" prefHeight="218.0" prefWidth="984.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>

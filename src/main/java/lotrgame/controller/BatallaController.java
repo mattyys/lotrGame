@@ -16,16 +16,16 @@ import lotrgame.model.Personaje;
 @Setter
 public class BatallaController {
 
-    /** The heroes. */
+    /** Lista de heroes. */
     private List<Heroes> heroes;
 
-    /** The bestias. */
+    /** Lista de bestias. */
     private List<Bestias> bestias;
 
-    /** The batalla. */
+    /** Lista del pogreso de la batalla. */
     private List<String> batalla;
 
-    /** The personajes eliminados. */
+    /** LIsta de personajes eliminados. */
     private List<String> personajesEliminados;
 
     /**
@@ -109,9 +109,8 @@ public class BatallaController {
 	    if (i == menorEjercito) {
 		i = 0;
 	    }
-
 	}
-
+	addBatalla("Fin de la batalla...");
     }
 
     /**

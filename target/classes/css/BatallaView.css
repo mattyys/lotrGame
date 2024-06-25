@@ -1,0 +1,6 @@
+.txt-datos{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-text-fill: transparent;
+	-fx-border-bottom: 1px solid #000;
+}
