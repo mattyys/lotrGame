@@ -23,7 +23,7 @@ public class AplicacionFx extends Application {
 		e.printStackTrace();
 		throw new RuntimeException("No se pudo cargar el archivo FXML", e);
 	    }
-		
+	    root.getStylesheets().add("/css/batallaView.css");
 	    Scene scene = new Scene(root);
 	    primaryStage.setScene(scene);
 	    primaryStage.setTitle("Lord of the Rings Game");

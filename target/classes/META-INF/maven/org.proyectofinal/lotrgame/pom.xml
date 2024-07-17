@@ -8,8 +8,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<javafx.version>23-ea+22</javafx.version>
 	</properties>
 
@@ -52,6 +52,26 @@
 			<groupId>com.jfoenix</groupId>
 			<artifactId>jfoenix</artifactId>
 			<version>9.0.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-core -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-core</artifactId>
+			<version>12.3.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-javafx -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-javafx</artifactId>
+			<version>12.3.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-materialdesign2-pack</artifactId>
+			<version>12.3.1</version>
 		</dependency>
 
 

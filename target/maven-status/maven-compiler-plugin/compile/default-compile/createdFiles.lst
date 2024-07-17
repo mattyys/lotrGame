@@ -12,3 +12,4 @@ lotrgame/model/RazaPersonajes.class
 lotrgame/model/Heroes.class
 lotrgame/model/Bestias$BestiasBuilderImpl.class
 lotrgame/model/Heroes$HeroesBuilder.class
+lotrgame/utils/ExportTXT.class
