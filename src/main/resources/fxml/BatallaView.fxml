@@ -26,7 +26,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXListView fx:id="lv_heroes" />
+                        <JFXListView fx:id="lv_heroes" prefHeight="306.0" prefWidth="275.0" />
                         <HBox alignment="CENTER" spacing="15.0">
                            <children>
                               <JFXButton fx:id="btn_subir_h" onAction="#onActionSubirHeroe" styleClass="btn-lv-heroes" text="Subir" textFill="#dd33f2">
@@ -61,7 +61,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXListView fx:id="lv_bestias" />
+                        <JFXListView fx:id="lv_bestias" prefHeight="306.0" prefWidth="275.0" />
                         <HBox alignment="CENTER" spacing="15.0">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -101,10 +101,10 @@
       <VBox alignment="CENTER" prefHeight="235.0" prefWidth="135.0" spacing="40.0" BorderPane.alignment="CENTER">
          <children>
             <JFXButton fx:id="btn_addPersonajes" onAction="#openAgrPersonajes" text="Agregar Personaje" />
-            <JFXButton fx:id="btn_ejercitos" styleClass="btn-cargar" text="Cragar Ejercitos" />
+            <JFXButton fx:id="btn_ejercitos" onAction="#onCargarEjercitos" styleClass="btn-cargar" text="Cragar Ejercitos" />
             <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" ripplerFill="#2402fa" styleClass="btn-lucha" text="Lucha" textFill="#070707" />
-            <JFXButton fx:id="btn_resultado" text="Resultado" />
-            <JFXButton fx:id="btn_eliminados" text="Pers. Eliminados" />
+            <JFXButton fx:id="btn_resultado" onAction="#onResultado" text="Resultado" />
+            <JFXButton fx:id="btn_eliminados" onAction="#onPerEliminados" text="Pers. Eliminados" />
          </children>
       </VBox>
    </left>

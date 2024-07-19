@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import lotrgame.model.Bestias;
 import lotrgame.model.Heroes;
 import lotrgame.model.Personaje;
+import lotrgame.utils.EjercitoGenerator;
 
 public class BatallaViewController {
 
@@ -56,12 +57,12 @@ public class BatallaViewController {
 
     @FXML
     private JFXListView<Heroes> lv_heroes;
-    
+
     @FXML
     private BorderPane rootPane;
 
     private final BatallaController BATALLA_CONTROLLER = new BatallaController();
-    
+
     private final String SUBIR = "Subir";
     private final String BAJAR = "Bajar";
 
@@ -110,19 +111,43 @@ public class BatallaViewController {
 	int index = lv_heroes.getSelectionModel().getSelectedIndex();
 	posicionarItem(index, SUBIR, lv_heroes.getItems().get(index));
     }
-    
+
+    @FXML
+    void onCargarEjercitos(ActionEvent event) {
+	// cargar ejercitos
+	EjercitoGenerator ejercitoGenerator = new EjercitoGenerator();
+	
+	BATALLA_CONTROLLER.getHeroes().addAll(ejercitoGenerator.getHeroesBasico());
+	BATALLA_CONTROLLER.getBestias().addAll(ejercitoGenerator.getBestiasBasico());
+
+	// actualizar listas
+	updateListas();
+
+    }
+
+    @FXML
+    void onPerEliminados(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onResultado(ActionEvent event) {
+
+    }
+
     @FXML
     void openAgrPersonajes(ActionEvent event) {
 	// abrir ventana para agregar personajes
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AgregarPersonajes.fxml"));		
+	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AgregarPersonajes.fxml"));
 	// cargar la ventana
 	try {
-	    Parent apRoot = loader.load();
 	    // cargar controlador
-	    AgregarPersonajesController agregarPersonajesController = new AgregarPersonajesController();
+	    Parent apRoot = loader.load();
+
+	    AgregarPersonajesController agregarPersonajesController = loader.getController();
 	    agregarPersonajesController.setBatallaController(BATALLA_CONTROLLER);
 	    agregarPersonajesController.setBatallaViewController(this);
-	    
+
 	    Scene scene = new Scene(apRoot);
 	    scene.getStylesheets().add(getClass().getResource("/css/AddPersonajes.css").toExternalForm());
 	    Stage stage = new Stage();
@@ -133,12 +158,11 @@ public class BatallaViewController {
 	    stage.setIconified(false);
 	    stage.setScene(scene);
 	    stage.showAndWait();
-	    
-	    
+
 	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
-	} 
+	}
 
     }
 
@@ -149,21 +173,22 @@ public class BatallaViewController {
 	// recargar listas
 	lv_bestias.getItems().addAll(BATALLA_CONTROLLER.getBestias());
 	lv_heroes.getItems().addAll(BATALLA_CONTROLLER.getHeroes());
+	
+	lv_bestias.refresh();
+	lv_heroes.refresh();
 
     }
 
     private void eliminarPersonaje(int index, Personaje personaje) {
 	if (personaje instanceof Bestias) {
 	    // ver si es necesario ya que se vuleve a cargar la lista desde el listview
-	    // Bestias bestia = (Bestias) personaje;
-	    // BATALLA_CONTROLLER.eliminarBestia(bestia);
+	    Bestias bestia = (Bestias) personaje;
+	    BATALLA_CONTROLLER.eliminarBestia(bestia);
 	    lv_bestias.getItems().remove(index);
-	    BATALLA_CONTROLLER.setBestias(lv_bestias.getItems());
 	} else {
-	    // Heroes heroe = (Heroes) personaje;
-	    // BATALLA_CONTROLLER.eliminarHeroe(heroe);
+	    Heroes heroe = (Heroes) personaje;
+	    BATALLA_CONTROLLER.eliminarHeroe(heroe);
 	    lv_heroes.getItems().remove(index);
-	    BATALLA_CONTROLLER.setHeroes(lv_heroes.getItems());
 	}
     }
 

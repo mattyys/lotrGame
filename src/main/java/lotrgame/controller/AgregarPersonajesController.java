@@ -90,8 +90,10 @@ public class AgregarPersonajesController {
 		
 		// agregar heroe a la lista de heroes
 		batallaController.addHeroes(newHeroe);
+		
 		MyAlerta alerta = new MyAlerta("Personaje agregado", "Heroe agregado",
 			"Se ha agregado un nuevo heroe, Agregar otro personaje?", Alert.AlertType.CONFIRMATION);
+		
 		Optional<ButtonType> result = alerta.mostrar();
 		if (result.get() == MyAlerta.BTN_SI) {
 		    clearFields();

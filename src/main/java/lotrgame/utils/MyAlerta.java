@@ -23,7 +23,7 @@ public class MyAlerta {
     public Optional<ButtonType> mostrar() {
 	Alert alert = new Alert(tipo);
 	if (tipo == Alert.AlertType.CONFIRMATION) {
-	    alert.getButtonTypes().setAll(BTN_SI, BTN_NO);
+	    alert.getButtonTypes().setAll(BTN_NO,BTN_SI);
 	}
 	alert.setTitle(titulo);
 	alert.setHeaderText(header);
