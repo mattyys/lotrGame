@@ -13,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
 <BorderPane fx:id="rootPane" prefHeight="498.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.BatallaViewController">
    <center>
       <Pane prefHeight="445.0" prefWidth="705.0" styleClass="rootPane">
@@ -101,7 +100,7 @@
    <left>
       <VBox alignment="CENTER" prefHeight="235.0" prefWidth="135.0" spacing="40.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="btn_addPersonajes" text="Agregar Personaje" />
+            <JFXButton fx:id="btn_addPersonajes" onAction="#openAgrPersonajes" text="Agregar Personaje" />
             <JFXButton fx:id="btn_ejercitos" styleClass="btn-cargar" text="Cragar Ejercitos" />
             <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" ripplerFill="#2402fa" styleClass="btn-lucha" text="Lucha" textFill="#070707" />
             <JFXButton fx:id="btn_resultado" text="Resultado" />

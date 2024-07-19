@@ -15,8 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
-<GridPane prefHeight="307.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane prefHeight="307.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.AgregarPersonajesController">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="174.0" minWidth="10.0" prefWidth="103.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="227.0" />
@@ -88,7 +87,7 @@
       <JFXComboBox fx:id="cb_raza" prefHeight="32.0" prefWidth="227.0" promptText="Seleccionar ..." styleClass="combo-seleccionar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <children>
-            <JFXRadioButton fx:id="rb_heroes" prefHeight="5.0" prefWidth="79.0" text="Heroes" textAlignment="CENTER">
+            <JFXRadioButton fx:id="rb_heroes" onAction="#onSelectHeroes" prefHeight="5.0" prefWidth="79.0" text="Heroes" textAlignment="CENTER">
                <selectedColor>
                   <Color red="0.0784313753247261" green="0.062745101749897" blue="0.6117647290229797" />
                </selectedColor>
@@ -96,7 +95,7 @@
                   <ToggleGroup fx:id="tg_rb_tipo_personajes" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="rb_bestias" text="Bestias" toggleGroup="$tg_rb_tipo_personajes" />
+            <JFXRadioButton fx:id="rb_bestias" onAction="#onSelectBestias" text="Bestias" toggleGroup="$tg_rb_tipo_personajes" />
          </children>
          <opaqueInsets>
             <Insets />
