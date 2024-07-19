@@ -2,10 +2,7 @@
 	-fx-background-color: white;
 }
    
-.txt-datos{
-   -fx-background-color:transparent;
-   -fx-border-color:transparent transparent black transparent;  
-}
+
 
 .btn-lv-heroes {
 	-fx-background-color: lightblue;
