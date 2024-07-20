@@ -105,6 +105,7 @@
             <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" ripplerFill="#2402fa" styleClass="btn-lucha" text="Lucha" textFill="#070707" />
             <JFXButton fx:id="btn_resultado" onAction="#onResultado" text="Resultado" />
             <JFXButton fx:id="btn_eliminados" onAction="#onPerEliminados" text="Pers. Eliminados" />
+            <JFXButton fx:id="btn_reset" onAction="#onReset" text="Reset" />
          </children>
       </VBox>
    </left>

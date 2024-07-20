@@ -3,6 +3,8 @@
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/AgregarPersonajesController.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/BatallaController.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/BatallaViewController.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/ImagenBatallaController.java
+/home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/controller/ResultadoViewController.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Bestias.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Heroes.java
 /home/matias/eclipse-workspace/lotrgame/src/main/java/lotrgame/model/Personaje.java

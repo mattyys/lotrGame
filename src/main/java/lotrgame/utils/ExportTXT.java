@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.List;
 
+
 import javafx.stage.FileChooser;
 
 public class ExportTXT {
@@ -16,6 +17,7 @@ public class ExportTXT {
 	fileChooser.getExtensionFilters().add(extFilter);
 
 	File file = fileChooser.showSaveDialog(null);
+	
 
 	if (file != null) {
 	    try (PrintWriter writer = new PrintWriter(file)) {

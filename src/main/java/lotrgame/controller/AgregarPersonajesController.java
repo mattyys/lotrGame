@@ -133,7 +133,7 @@ public class AgregarPersonajesController {
 	Stage stage = (Stage) btn_agregar.getScene().getWindow();
 	stage.close();
 	batallaViewController.updateListas();
-
+	batallaViewController.estadoBotones();
     }
 
 }
