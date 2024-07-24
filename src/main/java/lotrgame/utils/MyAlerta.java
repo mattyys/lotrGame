@@ -46,7 +46,7 @@ public class MyAlerta {
     
     /**
      * Mostrar.
-     * <p>Alert con botones de confirmación personalizados "Si - No"</p> 
+     * <p>Alert personalizado con botones de confirmación personalizados "Si - No"</p> 
      *
      * @return the optional
      */
