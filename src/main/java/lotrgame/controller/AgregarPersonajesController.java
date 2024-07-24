@@ -79,42 +79,17 @@ public class AgregarPersonajesController {
 		|| cb_raza.getSelectionModel().isEmpty() || tg_rb_tipo_personajes.getSelectedToggle() == null) {
 	    return;
 	} else {
-	    // chequear si es heroe o bestia
-	    if (tg_rb_tipo_personajes.getSelectedToggle().equals(rb_heroes)) {
-		// crear heroe
-		Heroes newHeroe = Heroes.builder().nombre(txf_nombre.getText()).raza(cb_raza.getValue())
-			.vida(Integer.parseInt(txf_vida.getText())).armadura(Integer.parseInt(txf_armadura.getText()))
-			.build();
-
-		//VER PORQUE ES NULL
-		
-		// agregar heroe a la lista de heroes
-		batallaController.addHeroes(newHeroe);
-		
-		MyAlerta alerta = new MyAlerta("Personaje agregado", "Heroe agregado",
-			"Se ha agregado un nuevo heroe, Agregar otro personaje?", Alert.AlertType.CONFIRMATION);
-		
-		Optional<ButtonType> result = alerta.mostrar();
-		if (result.get() == MyAlerta.BTN_SI) {
-		    clearFields();
+	    if (checkCamposNumericos()) {
+		// chequear si es heroe o bestia
+		if (tg_rb_tipo_personajes.getSelectedToggle().equals(rb_heroes)) {
+		    guardarHeroe();
 		} else {
-		    volverMenu();
+		    guardarBestia();
 		}
-
 	    } else {
-		// crear bestia
-		Bestias newBestia = Bestias.builder().nombre(txf_nombre.getText()).raza(cb_raza.getValue())
-			.vida(Integer.parseInt(txf_vida.getText())).armadura(Integer.parseInt(txf_armadura.getText()))
-			.build();
-		batallaController.addBestias(newBestia);
-		MyAlerta alerta = new MyAlerta("Personaje agregado", "Bestia agregada",
-			"Se ha agregado una nueva bestia, Agregar otro personaje?", Alert.AlertType.CONFIRMATION);
-		Optional<ButtonType> result = alerta.mostrar();
-		if (result.get() == MyAlerta.BTN_SI) {
-		    clearFields();
-		} else {
-		    volverMenu();
-		}
+		MyAlerta alerta = new MyAlerta("Error", "Campos numericos incorrectos",
+			"Debe ingresar valores numericos en los campos de vida y/o armadura", Alert.AlertType.ERROR);
+		alerta.mostrar();
 	    }
 	}
 
@@ -134,6 +109,53 @@ public class AgregarPersonajesController {
 	stage.close();
 	batallaViewController.updateListas();
 	batallaViewController.estadoBotones();
+    }
+
+    private boolean checkCamposNumericos() {
+	// chequear si los campos de armadura y vida son numericos
+	if (!txf_vida.getText().matches("[0-9]+")) {
+	    txf_vida.requestFocus();
+	    return false;
+	}else if(!txf_armadura.getText().matches("[0-9]+")) {
+	    txf_armadura.requestFocus();
+	    return false;
+	}
+	return true;
+
+    }
+
+    private void guardarHeroe() {
+	// crear heroe
+	Heroes newHeroe = Heroes.builder().nombre(txf_nombre.getText()).raza(cb_raza.getValue())
+		.vida(Integer.parseInt(txf_vida.getText())).armadura(Integer.parseInt(txf_armadura.getText())).build();
+
+	// agregar heroe a la lista de heroes
+	batallaController.addHeroes(newHeroe);
+
+	MyAlerta alerta = new MyAlerta("Personaje agregado", "Heroe agregado",
+		"Se ha agregado un nuevo heroe, Agregar otro personaje?", Alert.AlertType.CONFIRMATION);
+
+	Optional<ButtonType> result = alerta.mostrar();
+	if (result.get() == MyAlerta.BTN_SI) {
+	    clearFields();
+	} else {
+	    volverMenu();
+	}
+    }
+
+    private void guardarBestia() {
+	// crear bestia
+	Bestias newBestia = Bestias.builder().nombre(txf_nombre.getText()).raza(cb_raza.getValue())
+		.vida(Integer.parseInt(txf_vida.getText())).armadura(Integer.parseInt(txf_armadura.getText())).build();
+	batallaController.addBestias(newBestia);
+	MyAlerta alerta = new MyAlerta("Personaje agregado", "Bestia agregada",
+		"Se ha agregado una nueva bestia, Agregar otro personaje?", Alert.AlertType.CONFIRMATION);
+	Optional<ButtonType> result = alerta.mostrar();
+	if (result.get() == MyAlerta.BTN_SI) {
+	    clearFields();
+	} else {
+	    volverMenu();
+	}
     }
 
 }

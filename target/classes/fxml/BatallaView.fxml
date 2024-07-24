@@ -13,15 +13,15 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane fx:id="rootPane" prefHeight="498.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.BatallaViewController">
+<BorderPane fx:id="rootPane" prefHeight="498.0" prefWidth="876.0" styleClass="root-borderpane" stylesheets="@../css/batallaView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lotrgame.controller.BatallaViewController">
    <center>
       <Pane prefHeight="445.0" prefWidth="705.0" styleClass="rootPane">
          <children>
-            <HBox alignment="CENTER" layoutX="-6.0" layoutY="13.0" prefHeight="394.0" prefWidth="740.0" spacing="50.0">
+            <HBox alignment="CENTER" layoutX="9.0" layoutY="19.0" prefHeight="381.0" prefWidth="696.0" spacing="50.0">
                <children>
                   <VBox spacing="5.0">
                      <children>
-                        <Label alignment="CENTER" text="Heroes">
+                        <Label alignment="CENTER" styleClass="label-h" text="Heroes">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -29,9 +29,9 @@
                         <JFXListView fx:id="lv_heroes" prefHeight="306.0" prefWidth="275.0" />
                         <HBox alignment="CENTER" spacing="15.0">
                            <children>
-                              <JFXButton fx:id="btn_subir_h" onAction="#onActionSubirHeroe" styleClass="btn-lv-heroes" text="Subir" textFill="#dd33f2">
+                              <JFXButton fx:id="btn_subir_h" onAction="#onActionSubirHeroe" styleClass="btn-lv-heroes" text="Subir" textFill="#23ba58">
                                  <graphic>
-                                    <FontIcon iconColor="#dd33f2" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
+                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
                                  </graphic>
                               </JFXButton>
                               <JFXButton fx:id="btn_bajar_h" onAction="#onAcionBajarHeroe" styleClass="btn-lv-heroes" text="Bajar" textFill="#f58c2a">
@@ -56,7 +56,7 @@
                   </VBox>
                   <VBox spacing="5.0">
                      <children>
-                        <Label alignment="CENTER" text="Bestias">
+                        <Label alignment="CENTER" styleClass="label-b" text="Bestias">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -67,9 +67,9 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                            <children>
-                              <JFXButton fx:id="btn_subir_b" onAction="#onActionSubirBestia" styleClass="btn-lv-bestias" text="Subir" textFill="#dd33f2">
+                              <JFXButton fx:id="btn_subir_b" onAction="#onActionSubirBestia" styleClass="btn-lv-bestias" text="Subir" textFill="#23ba58">
                                  <graphic>
-                                    <FontIcon iconColor="#dd33f2" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
+                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
                                  </graphic>
                               </JFXButton>
                               <JFXButton fx:id="btn_bajar_b" onAction="#onAcionBajarBestia" styleClass="btn-lv-bestias" text="Bajar" textFill="#f58c2a">
@@ -98,19 +98,37 @@
       </Pane>
    </center>
    <left>
-      <VBox alignment="CENTER" prefHeight="235.0" prefWidth="135.0" spacing="40.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="419.0" prefWidth="162.0" spacing="40.0" styleClass="vbox-buttons" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="btn_addPersonajes" onAction="#openAgrPersonajes" text="Agregar Personaje" />
-            <JFXButton fx:id="btn_ejercitos" onAction="#onCargarEjercitos" styleClass="btn-cargar" text="Cragar Ejercitos" />
-            <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" ripplerFill="#2402fa" styleClass="btn-lucha" text="Lucha" textFill="#070707" />
-            <JFXButton fx:id="btn_resultado" onAction="#onResultado" text="Resultado" />
-            <JFXButton fx:id="btn_eliminados" onAction="#onPerEliminados" text="Pers. Eliminados" />
-            <JFXButton fx:id="btn_reset" onAction="#onReset" text="Reset" />
+            <JFXButton fx:id="btn_addPersonajes" onAction="#openAgrPersonajes" prefHeight="26.0" prefWidth="154.0" text="Agregar Personaje" textFill="#3410fc">
+               <graphic>
+                  <FontIcon iconColor="#3410fc" iconLiteral="mdi2a-account-multiple-plus-outline" iconSize="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_ejercitos" onAction="#onCargarEjercitos" prefHeight="26.0" prefWidth="154.0" styleClass="btn-cargar" text="Cragar Ejercitos" textFill="#3410fc">
+               <graphic>
+                  <FontIcon iconColor="#3410fc" iconLiteral="mdi2u-upload-outline" iconSize="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" prefHeight="26.0" prefWidth="154.0" ripplerFill="#23ba58" styleClass="btn-lucha" text="Action - Lucha" textFill="#23ba58">
+               <graphic>
+                  <FontIcon iconColor="#23ba58" iconLiteral="mdi2p-play-outline" iconSize="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_resultado" onAction="#onResultado" prefHeight="26.0" prefWidth="154.0" text="Resultado">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2p-playlist-check" iconSize="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_eliminados" onAction="#onPerEliminados" prefHeight="26.0" prefWidth="154.0" text="Pers. Eliminados" textFill="#f5620a">
+               <graphic>
+                  <FontIcon iconColor="#f5620a" iconLiteral="mdi2p-playlist-remove" iconSize="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_reset" onAction="#onReset" prefHeight="26.0" prefWidth="154.0" text="Reset" textFill="#ff222a">
+               <graphic>
+                  <FontIcon iconColor="#ff242f" iconLiteral="mdi2r-restore" iconSize="18" />
+               </graphic></JFXButton>
          </children>
       </VBox>
    </left>
    <top>
-      <ImageView fitHeight="97.0" fitWidth="242.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="97.0" fitWidth="242.0" pickOnBounds="true" preserveRatio="true" styleClass="img-logo" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../images/lotr-title.png" />
          </image>

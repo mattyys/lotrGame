@@ -1,7 +1,8 @@
 package lotrgame;
 
-import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lotrgame.controller.BatallaController;
 import lotrgame.model.Bestias;
 import lotrgame.model.Heroes;
@@ -11,11 +12,16 @@ public class Aplicacion {
 
 	public static void main(String[] args) {
 	
-	    List<Heroes> heroes = new EjercitoGenerator().getHeroesBasico();
-	    List<Bestias> bestias = new  EjercitoGenerator().getBestiasBasico();
+	   // List<Heroes> heroes = new EjercitoGenerator().getHeroesBasico();
+	   // List<Bestias> bestias = new  EjercitoGenerator().getBestiasBasico();
 	    BatallaController batalla = new BatallaController();
 	    
+	    ObservableList<Heroes> heroes = FXCollections.observableArrayList();
+	    heroes = (ObservableList<Heroes>) new EjercitoGenerator().getHeroesBasico();
 	    batalla.setHeroes(heroes);
+	    
+	    ObservableList<Bestias> bestias = FXCollections.observableArrayList();
+	    bestias = (ObservableList<Bestias>) new EjercitoGenerator().getBestiasBasico();
 	    batalla.setBestias(bestias);
 	    
 	    batalla.iniciarBatalla();

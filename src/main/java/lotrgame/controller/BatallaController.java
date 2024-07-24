@@ -3,6 +3,8 @@ package lotrgame.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lombok.Getter;
 import lombok.Setter;
 import lotrgame.model.Bestias;
@@ -17,10 +19,10 @@ import lotrgame.model.Personaje;
 public class BatallaController {
 
     /** Lista de heroes. */
-    private List<Heroes> heroes;
+    private ObservableList<Heroes> heroes;
 
     /** Lista de bestias. */
-    private List<Bestias> bestias;
+    private ObservableList<Bestias> bestias;
 
     /** Lista del pogreso de la batalla. */
     private List<String> batalla;
@@ -32,8 +34,8 @@ public class BatallaController {
      * Instantiates a new batalla controller.
      */
     public BatallaController() {
-	this.heroes = new ArrayList<Heroes>();
-	this.bestias = new ArrayList<Bestias>();
+	this.heroes = FXCollections.observableArrayList();
+	this.bestias = FXCollections.observableArrayList();
 	this.batalla = new ArrayList<String>();
 	this.personajesEliminados = new ArrayList<String>();
     }

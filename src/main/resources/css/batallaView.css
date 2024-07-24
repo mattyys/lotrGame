@@ -2,9 +2,28 @@
 	-fx-background-color: white;
 }
    
+.vbox-buttons, .root-borderpane{
+    -fx-background-color: white;
+}
 
+.label-title{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e4a62;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 2);
+}
 
-.btn-lv-heroes {
-	-fx-background-color: lightblue;
-   
+.button:hover {
+    -fx-background-color: #d1e0e0;  
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
+
+.label-h, .label-b{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e4a62;
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 4, 0, 0, 0);*/
+}
+.img-logo{ 
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 20, 0.5, 0, 0);
 }

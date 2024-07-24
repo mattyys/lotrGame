@@ -1,0 +1,14 @@
+.root{
+	-fx-background-color: white;
+}
+
+.button:hover {
+    -fx-background-color: #d1e0e0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
+.label-title{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e4a62;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 2);
+}

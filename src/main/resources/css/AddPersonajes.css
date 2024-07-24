@@ -3,3 +3,13 @@
    -fx-background-color:transparent;
    -fx-border-color:transparent transparent black transparent;  
 }
+.combo-seleccionar{
+	-fx-font-size: 16;
+}
+.root{
+  -fx-background-color: white;
+}
+.button:hover {
+  -fx-background-color: #d1e0e0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
