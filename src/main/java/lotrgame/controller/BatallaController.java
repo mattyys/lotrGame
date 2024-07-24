@@ -65,7 +65,7 @@ public class BatallaController {
 
 	    // Se muestra turno y combatientes
 	    addBatalla("Turno " + turno++ + ":");
-	    addBatalla("Lucha entre" + heroe.mostrarEstado() + " y " + bestia.mostrarEstado());
+	    addBatalla("Lucha entre " + heroe.mostrarEstado() + " y " + bestia.mostrarEstado());
 
 	    // comienza la batalla con el heroe atacando primero luego la bestia
 	    addBatalla(heroe.atacar(bestia));
