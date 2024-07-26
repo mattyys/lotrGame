@@ -1,6 +1,8 @@
 package lotrgame.controller;
 
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
@@ -376,6 +378,30 @@ public class BatallaViewController implements Initializable {
     }
 
     /**
+     * Open Git Hub.
+     * <p>
+     * Abre ventana en el navegador predeterminado del sistema con la direccion de
+     * GitHub del proyecto
+     * </p>
+     *
+     * @param event the event
+     */
+    @FXML
+    void openGitHub(ActionEvent event) {
+	//direccion del repositorio
+	String url = "https://github.com/mattyys/lotrGame.git";
+	//chequea si se puede abrir el navegador
+	try {
+	    if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+		Desktop.getDesktop().browse(new URI(url));
+	    }
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+
+    }
+
+    /**
      * Update listas.
      * <p>
      * Carga las listas de heroes y bestias y actualiza las modificaciones
@@ -510,7 +536,9 @@ public class BatallaViewController implements Initializable {
 	    estado = true;
 	    btn_lucha.setDisable(estado);
 	}
-	if (BATALLA_CONTROLLER.getHeroes().isEmpty() && BATALLA_CONTROLLER.getBestias().isEmpty()) {
+	if (BATALLA_CONTROLLER.getHeroes().isEmpty() && BATALLA_CONTROLLER.getBestias().isEmpty()
+		&& BATALLA_CONTROLLER.getBatalla().isEmpty()
+		&& BATALLA_CONTROLLER.getPersonajesEliminados().isEmpty()) {
 	    estado = true;
 	    btn_reset.setDisable(estado);
 	}

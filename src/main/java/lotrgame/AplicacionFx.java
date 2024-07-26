@@ -14,7 +14,6 @@ public class AplicacionFx extends Application {
 	public void start(Stage primaryStage) {
 	    
 	    URL url = getClass().getResource("/fxml/BatallaView.fxml");
-	    System.out.println("Ruta pincipal: " + url);
 	    Parent root = null;
 	    
 	    try{

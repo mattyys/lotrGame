@@ -12,6 +12,7 @@ lotrgame/AplicacionFx.class
 lotrgame/model/Heroes.class
 lotrgame/controller/BatallaViewController.class
 lotrgame/model/Personaje$PersonajeBuilder.class
+lotrgame/aapp.class
 lotrgame/controller/AgregarPersonajesController.class
 lotrgame/model/RazaPersonajes.class
 lotrgame/model/Bestias$BestiasBuilderImpl.class

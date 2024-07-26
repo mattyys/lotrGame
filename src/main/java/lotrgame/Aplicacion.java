@@ -12,10 +12,10 @@ public class Aplicacion {
 
 	public static void main(String[] args) {
 	
-	   // List<Heroes> heroes = new EjercitoGenerator().getHeroesBasico();
-	   // List<Bestias> bestias = new  EjercitoGenerator().getBestiasBasico();
+	//se crea un nuevo controlador de batalla
 	    BatallaController batalla = new BatallaController();
 	    
+	    //se crean los ejercitos basicos
 	    ObservableList<Heroes> heroes = FXCollections.observableArrayList();
 	    heroes = (ObservableList<Heroes>) new EjercitoGenerator().getHeroesBasico();
 	    batalla.setHeroes(heroes);
@@ -24,8 +24,10 @@ public class Aplicacion {
 	    bestias = (ObservableList<Bestias>) new EjercitoGenerator().getBestiasBasico();
 	    batalla.setBestias(bestias);
 	    
+	    //se inicia la batalla
 	    batalla.iniciarBatalla();
 	    
+	    //se muestra el resultado
 	    batalla.getBatalla().forEach(System.out::println);
 	    
 	    System.out.println();

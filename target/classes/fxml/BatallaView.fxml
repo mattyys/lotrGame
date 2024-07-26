@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -33,16 +35,25 @@
                                  <graphic>
                                     <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                               <JFXButton fx:id="btn_bajar_h" onAction="#onAcionBajarHeroe" styleClass="btn-lv-heroes" text="Bajar" textFill="#f58c2a">
                                  <graphic>
                                     <FontIcon iconColor="#f58c2a" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                               <JFXButton fx:id="btn_eliminar_h" onAction="#onActionEliminarHeroe" styleClass="btn-lv-heroes" text="Eliminar" textFill="#f50a0a">
                                  <graphic>
                                     <FontIcon iconColor="#f50a0a" iconLiteral="mdi2m-minus-circle" iconSize="18" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                            </children>
                            <padding>
@@ -71,16 +82,25 @@
                                  <graphic>
                                     <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                               <JFXButton fx:id="btn_bajar_b" onAction="#onAcionBajarBestia" styleClass="btn-lv-bestias" text="Bajar" textFill="#f58c2a">
                                  <graphic>
                                     <FontIcon iconColor="#f58c2a" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                               <JFXButton fx:id="btn_eliminar_b" onAction="#onActionEliminarBestia" styleClass="btn-lv-bestias" text="Eliminar" textFill="#f50a0a">
                                  <graphic>
                                     <FontIcon iconColor="#f50a0a" iconLiteral="mdi2m-minus-circle" iconSize="18" />
                                  </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </JFXButton>
                            </children>
                         </HBox>
@@ -103,27 +123,45 @@
             <JFXButton fx:id="btn_addPersonajes" onAction="#openAgrPersonajes" prefHeight="26.0" prefWidth="154.0" text="Agregar Personaje" textFill="#3410fc">
                <graphic>
                   <FontIcon iconColor="#3410fc" iconLiteral="mdi2a-account-multiple-plus-outline" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <JFXButton fx:id="btn_ejercitos" onAction="#onCargarEjercitos" prefHeight="26.0" prefWidth="154.0" styleClass="btn-cargar" text="Cragar Ejercitos" textFill="#3410fc">
                <graphic>
                   <FontIcon iconColor="#3410fc" iconLiteral="mdi2u-upload-outline" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <JFXButton fx:id="btn_lucha" onAction="#onActionLucha" prefHeight="26.0" prefWidth="154.0" ripplerFill="#23ba58" styleClass="btn-lucha" text="Action - Lucha" textFill="#23ba58">
                <graphic>
                   <FontIcon iconColor="#23ba58" iconLiteral="mdi2p-play-outline" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <JFXButton fx:id="btn_resultado" onAction="#onResultado" prefHeight="26.0" prefWidth="154.0" text="Resultado">
                <graphic>
                   <FontIcon iconLiteral="mdi2p-playlist-check" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <JFXButton fx:id="btn_eliminados" onAction="#onPerEliminados" prefHeight="26.0" prefWidth="154.0" text="Pers. Eliminados" textFill="#f5620a">
                <graphic>
                   <FontIcon iconColor="#f5620a" iconLiteral="mdi2p-playlist-remove" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
             <JFXButton fx:id="btn_reset" onAction="#onReset" prefHeight="26.0" prefWidth="154.0" text="Reset" textFill="#ff222a">
                <graphic>
                   <FontIcon iconColor="#ff242f" iconLiteral="mdi2r-restore" iconSize="18" />
-               </graphic></JFXButton>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
          </children>
       </VBox>
    </left>
@@ -134,4 +172,14 @@
          </image>
       </ImageView>
    </top>
+   <right>
+      <FontIcon BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink onAction="#openGitHub" text="GitHub" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

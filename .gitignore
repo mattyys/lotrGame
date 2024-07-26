@@ -1,0 +1,35 @@
+
+# Java related
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# JavaScript related
+node_modules/
+dist/
+*.log
+
+# Eclipse related
+.classpath
+.project
+.settings/
+
+# Maven related
+log/
+target/
+
+# SQL related
+*.db
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+*.tmp
+*.bak
+*.swp
+*~

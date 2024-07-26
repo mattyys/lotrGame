@@ -21,12 +21,7 @@ public class Heroes extends Personaje {
      */
     private final float DISMINUIR_ARMADURA = 0.1f;
 
-    /**
-     * Atacar.
-     *
-     * @param contrario the contrario
-     * @return the string
-     */
+    
     @Override
     public String atacar(Personaje contrario) {
 	int dado1 = new Random().nextInt(0, 101);
@@ -47,13 +42,7 @@ public class Heroes extends Personaje {
 	return contrario.recibirAtaque(ataque, this);
     }
 
-    /**
-     * Recibir ataque.
-     *
-     * @param ataque   the ataque
-     * @param atacante the atacante
-     * @return the string
-     */
+
     @Override
     public String recibirAtaque(Integer ataque, Personaje atacante) {
 
@@ -74,9 +63,6 @@ public class Heroes extends Personaje {
 	}
 
 	return mensajeBatalla(atacante, ataque, ataqueFinal, this);
-
-	// return ("\t" + atacante.getNombre() + " saca " + ataque + " y le quita " +
-	// ataqueFinal + " de vida a " + this.getNombre());
 
     }
 

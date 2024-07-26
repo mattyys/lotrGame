@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"h2_embedded-190ef01849b-7f08d792b4aec47a": {
+			"provider": "h2",
+			"driver": "h2_embedded",
+			"name": "db_lotrgame",
+			"save-password": true,
+			"configuration": {
+				"database": "./src/main/resources/database/db_lotrgame",
+				"url": "jdbc:h2:./src/main/resources/database/db_lotrgame",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

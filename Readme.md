@@ -12,7 +12,7 @@ Dentro de los Heroes tenemos razas como Humanos, Elfos, Enanos, Magos y Hobbits.
 
 ## Modalidad de juego.
 
-El juego consiste en una batalla por turnoos entre los personajes de las facciones de Heroes y Bestias.
+El juego consiste en una batalla por turnos entre los personajes de las facciones de Heroes y Bestias.
 EL ataque se produce cuando al tirar los dados y el valor de los dados es mayor al valor de la defensa del personaje enemigo.
 Cada personaje tiene un ataque y una defensa, además de una habilidad especial que puede ser utilizada en el turno del personaje.
 El juego termina cuando uno de los bandos ha sido derrotado.
