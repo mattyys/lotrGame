@@ -94,7 +94,11 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
-					<mainClass>lotrgame.Aplicacion</mainClass>
+<!--					<mainClass>lotrgame.Aplicacion</mainClass>
+para ejecutarla aplicacion en modo consola, descomentar la linea de arriba y coment la de abajo y ejecutar
+el comando mvn exec:java o maven buil exec:java
+-->
+					<mainClass>lotrgame.Main</mainClass>
 				</configuration>
 			</plugin>
 
@@ -103,12 +107,91 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.8</version>
 				<configuration>
-					<mainClass>lotrgame.AplicacionFx</mainClass>
+					<mainClass>lotrgame.Main</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<configuration>
+							<launcher>launcher</launcher>
+							<mainClass>lotrgame.Main</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+<!-- 
+	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>lotrgame.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+-->
+
+			<!--
+			https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.6.0</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<outputFile>
+								${project.build.directory}/${project.artifactId}-${project.version}-shaded.jar
+							</outputFile>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>lotrgame.Main</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<show>private</show>
+					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
 
 
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
+					<show>public</show>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
 
 </project>

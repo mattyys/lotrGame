@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
+//import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -84,9 +84,9 @@ public class ImagenBatallaController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	img_imagen.setImage(new Image("/video/pelea.gif"));
-
+	//img_imagen.setImage(new Image("/video/pelea.gif"));
 	
+	//se carga la imagen directamente en el fxml
     }
 
 
