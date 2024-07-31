@@ -17,47 +17,100 @@ import lotrgame.model.Heroes;
 import lotrgame.model.RazaPersonajes;
 import lotrgame.utils.MyAlerta;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class AgregarPersonajesController.
+ * <p>
+ * CLase controladora de la vista AgregarPersonajesView, se encarga de agregar
+ * los personajes a las listas de heroes y bestias.
+ * </p>
  */
 public class AgregarPersonajesController {
 
-    /** The btn agregar. */
+    /**
+     * The btn agregar.
+     * <p>
+     * Boton para agregar un nuevo personaje.
+     */
     @FXML
     private JFXButton btn_agregar;
 
-    /** The cb raza. */
+    /**
+     * The cb raza.
+     * <p>
+     * Combo boix que muestra las razas de la faccion seleccionada.
+     * </p>
+     */
     @FXML
     private JFXComboBox<RazaPersonajes> cb_raza;
 
-    /** The rb bestias. */
+    /**
+     * The rb bestias.
+     * <p>
+     * Radio button para seleccionar la faccion de bestias.
+     * </p>
+     */
     @FXML
     private JFXRadioButton rb_bestias;
 
-    /** The rb heroes. */
+    /**
+     * The rb heroes.
+     * <p>
+     * Radio button para seleccionar la faccion de heroes.
+     */
     @FXML
     private JFXRadioButton rb_heroes;
 
-    /** The tg rb tipo personajes. */
+    /**
+     * The tg rb tipo personajes.
+     * <p>
+     * ToggleGroup para agrupar los radio buttons de faccion Heroes y Bestias.
+     * </p>
+     */
     @FXML
     private ToggleGroup tg_rb_tipo_personajes;
 
-    /** The txf armadura. */
+    /**
+     * The txf armadura.
+     * <p>
+     * TextField(campo) para ingresar la armadura del personaje.
+     * </p>
+     */
     @FXML
     private TextField txf_armadura;
 
-    /** The txf nombre. */
+    /**
+     * The txf nombre.
+     * <p>
+     * TExtField(campo) para ingresar el nombre del personaje.
+     * </p>
+     */
     @FXML
     private TextField txf_nombre;
 
-    /** The txf vida. */
+    /**
+     * The txf vida.
+     * <p>
+     * TextField(campo) para ingresar la vida del personaje.
+     * </p>
+     */
     @FXML
     private TextField txf_vida;
 
-    /** The batalla controller. */
+    /**
+     * The batalla controller.
+     * <p>
+     * Cotrolador de la batalla. Contiene las listas de heroes y bestias.
+     * </p>
+     */
     private BatallaController batallaController;
 
-    /** The batalla view controller. */
+    /**
+     * The batalla view controller.
+     * <p>
+     * Controlador de la vista BatallaView, ventana a la cual se va a retornar.
+     * </p>
+     */
     private BatallaViewController batallaViewController;
 
     /**
@@ -149,7 +202,8 @@ public class AgregarPersonajesController {
     /**
      * Clear fields.
      * <p>
-     * Limpia los campos de texto, la seleccion de raza y el tipo de personaje
+     * Limpia los campos de texto, la seleccion de raza y el tipo de personaje,
+     * coloca el foco en el campo de nombre.
      * </p>
      */
     private void clearFields() {
@@ -165,7 +219,7 @@ public class AgregarPersonajesController {
      * Volver menu.
      * <p>
      * Vuelve al menu principal de la aplicacion, actualiza los estados de los
-     * botones.
+     * botones por medio del controlador de la vista BatallaView.
      * </p>
      */
     private void volverMenu() {
@@ -198,7 +252,8 @@ public class AgregarPersonajesController {
     /**
      * Guardar heroe.
      * <p>
-     * Guarda el heroe en la lista de heroes
+     * Guarda el heroe en la lista de heroes utilizando el controlador de la
+     * batalla.
      * </p>
      */
     private void guardarHeroe() {
@@ -218,7 +273,8 @@ public class AgregarPersonajesController {
     /**
      * Guardar bestia.
      * <p>
-     * Guarda la bestia en la lista de bestias
+     * Guarda la bestia en la lista de bestias utilizando el controlador de la
+     * batalla.
      * </p>
      */
     private void guardarBestia() {

@@ -11,27 +11,57 @@ import lotrgame.model.Bestias;
 import lotrgame.model.Heroes;
 import lotrgame.model.Personaje;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class BatallaController.
+ * <p>
+ * Clase controladora de la batalla entre ejercitos de Heroes y Bestias. Permite
+ * agregar Heroes y Bestias a sus respectivas listas, iniciar la batalla, crear
+ * mensajes de progreso de la batalla y mensajes de eliminación de personajes.
+ * </p>
  */
 @Getter
 @Setter
 public class BatallaController {
 
-    /** Lista de heroes. */
+    /**
+     * Lista de heroes.
+     * <p>
+     * Lista de Heroes que participan en la batalla.
+     * </p>
+     */
     private ObservableList<Heroes> heroes;
 
-    /** Lista de bestias. */
+    /**
+     * Lista de bestias.
+     * <p>
+     * Lista de Bestias que participan en la batalla.
+     * </p>
+     */
     private ObservableList<Bestias> bestias;
 
-    /** Lista del pogreso de la batalla. */
+    /**
+     * Lista del pogreso de la batalla.
+     * <p>
+     * Lista que contiene los mensajes de progreso de la batalla.
+     * </p>
+     */
     private List<String> batalla;
 
-    /** LIsta de personajes eliminados. */
+    /**
+     * Lista de personajes eliminados.
+     * <p>
+     * Lista que continene los mensajes de eliminación de personajes.
+     * </p>
+     */
     private List<String> personajesEliminados;
 
     /**
      * Instantiates a new batalla controller.
+     * <p>
+     * Constructor de la clase BatallaController. Inicializa las listas de heroes,
+     * bestias, batalla y personajes eliminados.
+     * </p>
      */
     public BatallaController() {
 	this.heroes = FXCollections.observableArrayList();
@@ -43,8 +73,9 @@ public class BatallaController {
     /**
      * Iniciar batalla.
      * <p>
-     * Método que controla la batalla entre ejercitos guardando las inteacciones en
-     * un List<>() para la batalla y personajes eliminados.
+     * Método que controla la batalla entre ejercitos, guardando las inteacciones en
+     * un lista para la batalla y personajes eliminados.
+     * </p>
      */
     public void iniciarBatalla() {
 
@@ -117,7 +148,9 @@ public class BatallaController {
 
     /**
      * Adds the batalla.
-     * <p> Agrega un mensaje del progreso de la batalla a la lista de batalla.
+     * <p>
+     * Agrega un mensaje del progreso de la batalla a la lista de batalla.
+     * </p>
      *
      * @param mensaje the mensaje
      */
@@ -127,34 +160,40 @@ public class BatallaController {
 
     /**
      * Adds the heroes.
-     * <p> Agrega un Heroe a la lista de Heroes.
+     * <p>
+     * Agrega un Heroe a la lista de Heroes.
+     * </p>
      *
      * @param heroe the heroe
      */
     public void addHeroes(Heroes heroe) {
 	heroes.add(heroe);
     }
-    
+
     /**
      * Adds the personaje.
-     * <p> Agrega un Personaje a la lista de Heroes o Bestias segun su tipo.
+     * <p>
+     * Agrega un Personaje a la lista de Heroes o Bestias segun su tipo.
+     * </p>
      *
      * @param personaje the personaje
      */
     public void addPersonaje(Personaje personaje) {
 	if (personaje instanceof Heroes) {
-	    heroes.add((Heroes)personaje);
+	    heroes.add((Heroes) personaje);
 	}
-	if(personaje instanceof Bestias) {
-	    bestias.add((Bestias)personaje);
+	if (personaje instanceof Bestias) {
+	    bestias.add((Bestias) personaje);
 	}
-	
+
     }
 
     /**
      * Adds the bestias.
-     * <p> Agrega una Bestia a la lista de Bestias.
-     *
+     * <p>
+     * Agrega una Bestia a la lista de Bestias.
+     * </p>
+     * 
      * @param bestia the bestia
      */
     public void addBestias(Bestias bestia) {
@@ -163,7 +202,10 @@ public class BatallaController {
 
     /**
      * Eliminar heroe.
-     *<p> Elimina el Heroe pasado por parametro.
+     * <p>
+     * Elimina el Heroe pasado por parametro.
+     * </p>
+     * 
      * @param heroe the heroe
      */
     public void eliminarHeroe(Heroes heroe) {
@@ -172,8 +214,10 @@ public class BatallaController {
 
     /**
      * Eliminar bestia.
-     * <p> Elimina la Bestia pasada por parametro
-     *
+     * <p>
+     * Elimina la Bestia pasada por parametro.
+     * </p>
+     * 
      * @param bestia the bestia
      */
     public void eliminarBestia(Bestias bestia) {
@@ -182,7 +226,9 @@ public class BatallaController {
 
     /**
      * Clear all ejercitos.
-     * <p>Vacía la lista de los ejecitos de Bestias y Heroes.
+     * <p>
+     * Vacía la lista de los ejecitos de Bestias y Heroes.
+     * </p>
      */
     public void clearAllEjercitos() {
 	this.heroes.clear();
@@ -192,10 +238,10 @@ public class BatallaController {
     /**
      * Adds the personaje eliminado.
      * <p>
-     * Recibe como primer parametro al personaje eliminado, segundo parametro al
-     * personaje atacante, tercer parametro el turno. Se crea un String formateado
-     * con los datos de la eliminación el turno correspondiente y se agrega a la
-     * lista de Pesonajes Eliminados.
+     * Crea un mensaje de eliminación de personaje y lo agrega a la lista de
+     * Personajes Eliminados. Recibe como primer parametro al personaje eliminado,
+     * segundo parametro al personaje atacante, tercer parametro el turno.
+     * </p>
      *
      * @param personajeEliminado the personaje eliminado
      * @param atacante           the atacante
@@ -206,16 +252,19 @@ public class BatallaController {
 	mensaje.append(personajeEliminado.getRaza().getNombreRaza()).append(" ").append(personajeEliminado.getNombre())
 		.append(" eliminado por ").append(atacante.getRaza().getNombreRaza()).append(" ")
 		.append(atacante.getNombre()).append(" en el turno ").append(turno);
+
 	personajesEliminados.add(mensaje.toString());
     }
 
     /**
      * Mensaje eliminacion.
      * <p>
-     * Recibe un Personaje (Bestia o Heroe) como parametro y devuelve un String con
-     * los detalles de raza y nombre del personaje eliminado.
+     * Crear un mensaje de eliminación de personaje. Recibe un Personaje (Bestia o
+     * Heroe) como parametro y devuelve un String con los detalles de raza y nombre
+     * del personaje eliminado.
+     * </p>
      *
-     * @param personaje the personaje
+     * @param personaje the personaje eliminado
      * @return the string
      */
     private String mensajeEliminacion(Personaje personaje) {

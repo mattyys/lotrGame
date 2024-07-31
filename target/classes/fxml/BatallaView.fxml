@@ -33,7 +33,7 @@
                            <children>
                               <JFXButton fx:id="btn_subir_h" onAction="#onActionSubirHeroe" styleClass="btn-lv-heroes" text="Subir" textFill="#23ba58">
                                  <graphic>
-                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
+                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-up-circle" iconSize="18" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -80,7 +80,7 @@
                            <children>
                               <JFXButton fx:id="btn_subir_b" onAction="#onActionSubirBestia" styleClass="btn-lv-bestias" text="Subir" textFill="#23ba58">
                                  <graphic>
-                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-down-circle" iconSize="18" rotate="180.0" />
+                                    <FontIcon iconColor="#23ba58" iconLiteral="mdi2a-arrow-up-circle" iconSize="18" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />

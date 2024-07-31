@@ -30,90 +30,202 @@ import lotrgame.model.Personaje;
 import lotrgame.utils.EjercitoGenerator;
 import lotrgame.utils.MyAlerta;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class BatallaViewController.
+ * <p>
+ * Clase controladora de la vista principal, se encarga de manejar la logica de
+ * la aplicacion. Controla los eventos de los botones y la interaccion con las
+ * listas de heroes y bestias.
+ * </p>
  */
 public class BatallaViewController implements Initializable {
 
-    /** The btn add personajes. */
+    /**
+     * The btn add personajes.
+     * <p>
+     * Boton que llama a la ventana para agregar personajes
+     * </p>
+     */
     @FXML
     private JFXButton btn_addPersonajes;
 
-    /** The btn bajar b. */
+    /**
+     * The btn bajar b.
+     * <p>
+     * Boton para bajar una posicion el item seleccionado de la lista de bestias.
+     * </p>
+     */
     @FXML
     private JFXButton btn_bajar_b;
 
-    /** The btn bajar h. */
+    /**
+     * The btn bajar h.
+     * <p>
+     * Boton para bajar una posicion el item seleccionado de la lista de heroes.
+     * </p>
+     */
     @FXML
     private JFXButton btn_bajar_h;
 
-    /** The btn ejercitos. */
+    /**
+     * The btn ejercitos.
+     * <p>
+     * Boton para cargar ejercitos predefinidos de heroes y bestias.
+     * </p>
+     */
     @FXML
     private JFXButton btn_ejercitos;
 
-    /** The btn eliminados. */
+    /**
+     * The btn eliminados.
+     * <p>
+     * Boton que llama a la ventanaque muestra la lista de los personajes
+     * eliminados.
+     * </p>
+     */
     @FXML
     private JFXButton btn_eliminados;
 
-    /** The btn eliminar b. */
+    /**
+     * The btn eliminar b.
+     * <p>
+     * Boton para eliminar el item seleccionado de la lista de bestias.
+     * </p>
+     */
     @FXML
     private JFXButton btn_eliminar_b;
 
-    /** The btn eliminar h. */
+    /**
+     * The btn eliminar h.
+     * <p>
+     * Boton para eliminar el item seleccionado de la lista de heroes.
+     * </p>
+     */
     @FXML
     private JFXButton btn_eliminar_h;
 
-    /** The btn lucha. */
+    /**
+     * The btn lucha.
+     * <p>
+     * Boton que inicia la batalla, y llama a la ventana de lucha y resultado.
+     * </p>
+     */
     @FXML
     private JFXButton btn_lucha;
 
-    /** The btn reset. */
+    /**
+     * The btn reset.
+     * <p>
+     * Boton utilizado para reiniciar los valores de todas las listas y datos de la
+     * batalla.
+     * </p>
+     */
     @FXML
     private JFXButton btn_reset;
 
-    /** The btn resultado. */
+    /**
+     * The btn resultado.
+     * <p>
+     * Boton que llama a la ventana que muestra el resultado de la batalla.
+     * </p>
+     */
     @FXML
     private JFXButton btn_resultado;
 
-    /** The btn subir b. */
+    /**
+     * The btn subir b.
+     * <p>
+     * Boton para subir una posicion el item seleccionado de la lista de bestias.
+     * </p>
+     */
     @FXML
     private JFXButton btn_subir_b;
 
-    /** The btn subir h. */
+    /**
+     * The btn subir h.
+     * <p>
+     * Boton para subir una posicion el item seleccionado de la lista de heroes.
+     * </p>
+     */
     @FXML
     private JFXButton btn_subir_h;
 
-    /** The lv bestias. */
+    /**
+     * The lv bestias.
+     * <p>
+     * Listview que muestra el listado de bestias.
+     * </p>
+     */
     @FXML
     private JFXListView<Bestias> lv_bestias;
 
-    /** The lv heroes. */
+    /**
+     * The lv heroes.
+     * <p>
+     * ListView que muestra el listado de heroes.
+     * </p>
+     **/
     @FXML
     private JFXListView<Heroes> lv_heroes;
 
-    /** The root pane. */
+    /**
+     * The root pane.
+     * <p>
+     * Panel principal de la vista.
+     * </p>
+     */
     @FXML
     private BorderPane rootPane;
 
-    /** The batalla controller. */
+    /**
+     * The batalla controller.
+     * <p>
+     * Crea una instancia de la clase BatallaController encaragada de manejar la
+     * logica de la aplicacion(batalla).
+     * </p>
+     */
     private final BatallaController BATALLA_CONTROLLER = new BatallaController();
 
-    /** The subir. */
+    /**
+     * The subir.
+     * <p>
+     * Constante para subir una posicion el item seleccionado de la lista, se
+     * utiliza para verificar que boton se presiono.
+     * </p>
+     */
     private final String SUBIR = "Subir";
 
-    /** The bajar. */
+    /**
+     * The bajar.
+     * <p>
+     * Constante para bajar una posicion el item seleccionado de la lista, se
+     * utiliza para verificar que boton se presiono.
+     * </p>
+     */
     private final String BAJAR = "Bajar";
 
-    /** The resultado batalla. */
+    /**
+     * The resultado batalla.
+     * <p>
+     * Contatnte que guarda el nombre de la ventana de resultado de la batalla
+     * </p>
+     */
     public final String RESULTADO_BATALLA = "Resultado Batalla";
 
-    /** The personajes eliminados. */
+    /**
+     * The personajes eliminados.
+     * <p>
+     * Cosntante que guarda el nombre de la ventana de personajes eliminados
+     * </p>
+     */
     public final String PERSONAJES_ELIMINADOS = "Personajes Eliminados";
 
     /**
      * Initialize.
      * <p>
-     * Al cargar la ventana se inicializan los valores de los botones
+     * Al cargar la ventana se inicializan los valores de los botones. Si estan
+     * habilitados o no, chequeando las listyas disponibles.
      * </p>
      *
      * @param location  the location
@@ -121,13 +233,14 @@ public class BatallaViewController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+	// inicializa estado de los botones
 	estadoBotones();
     }
 
     /**
      * On acion bajar bestia.
      * <p>
-     * Baja una posicion el item una posicion en la lista
+     * Al pulsar sobre el boton baja una posicion el item de la lista Bestias.
      * </p>
      *
      * @param event the event
@@ -143,7 +256,7 @@ public class BatallaViewController implements Initializable {
     /**
      * On acion bajar heroe.
      * <p>
-     * Baja una posicion el item una posicion en la lista
+     * Al pulsar sobre el boton baja una posicion el item de la lista Heroes.
      * </p>
      *
      * @param event the event
@@ -159,7 +272,7 @@ public class BatallaViewController implements Initializable {
     /**
      * On action eliminar bestia.
      * <p>
-     * Elimina el item seleccionado de la lista
+     * Al pulsar sobre el boton elimina el item seleccionado de la lista Bestia.
      * </p>
      *
      * @param event the event
@@ -175,7 +288,7 @@ public class BatallaViewController implements Initializable {
     /**
      * On action eliminar heroe.
      * <p>
-     * Elimina el item seleccionado de la lista
+     * Al pulsar sobre el boton elimina el item seleccionado de la lista Heroe.
      * </p>
      *
      * @param event the event
@@ -190,8 +303,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On action lucha.
      * <p>
-     * Inicia la batalla, actualiza listas, estados de botones y muestra ventana con
-     * gif de lucha y resultado
+     * Al pulsar sobre el boton inicia la batalla, actualiza listas, estados de
+     * botones y muestra ventana con gif de lucha y resultado
      * </p>
      *
      * @param event the event
@@ -201,7 +314,10 @@ public class BatallaViewController implements Initializable {
 	// iniciar batalla
 	BATALLA_CONTROLLER.iniciarBatalla();
 
+	// actualizan listaS
 	updateListas();
+
+	// actualizar estado de los botones
 	estadoBotones();
 
 	// abrir ventana de lucha
@@ -212,7 +328,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On action subir bestia.
      * <p>
-     * Sube una posicion el item seleccionado de la lista
+     * Al pulsar sobre el boton Sube una posicion el item seleccionado de la lista
+     * de Bestias.
      * </p>
      *
      * @param event the event
@@ -228,7 +345,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On action subir heroe.
      * <p>
-     * Sube una posicion el item seleccionado de la lista
+     * Al pulsar sobre el boton sube una posicion el item seleccionado de la lista
+     * Heroes.
      * </p>
      *
      * @param event the event
@@ -243,8 +361,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On cargar ejercitos.
      * <p>
-     * Carga los ejercitos basicos de heroes y bestias, actualiza listas y estados
-     * de los botones, luego de la confirmacion
+     * Al pulsar sobre el boton carga los ejercitos basicos de heroes y bestias,
+     * actualiza listas y estados de los botones, luego de la confirmacion
      * </p>
      *
      * @param event the event
@@ -263,7 +381,7 @@ public class BatallaViewController implements Initializable {
 	    BATALLA_CONTROLLER.getHeroes().addAll(ejercitoGenerator.getHeroesBasico());
 	    BATALLA_CONTROLLER.getBestias().addAll(ejercitoGenerator.getBestiasBasico());
 
-	    // actualizar listas
+	    // actualizar listas y estados de botones
 	    updateListas();
 	    estadoBotones();
 	}
@@ -273,7 +391,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On per eliminados.
      * <p>
-     * Abre ventana con los personajes eliminados
+     * Al pulsar sobre el boton abre ventana con la lista de los personajes
+     * eliminados.
      * </p>
      *
      * @param event the event
@@ -288,7 +407,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On resultado.
      * <p>
-     * Abre ventana con el resultado de la batalla
+     * Al pulsar sobre el boton abre ventana con la lista de el resultado de la
+     * batalla.
      * </p>
      *
      * @param event the event
@@ -301,7 +421,8 @@ public class BatallaViewController implements Initializable {
     /**
      * On reset.
      * <p>
-     * Reinicia los valores de las listas de heroes, bestias y datos de la batalla
+     * Al pulsar sobre el boton reinicia los valores de las listas de heroes,
+     * bestias y datos de la batalla.
      * </p>
      *
      * @param event the event
@@ -331,7 +452,7 @@ public class BatallaViewController implements Initializable {
     /**
      * Open agr personajes.
      * <p>
-     * Abre ventana para agregar personajes
+     * Al pulsar sobre el boton abre ventana para agregar personajes.
      * </p>
      *
      * @param event the event
@@ -363,6 +484,7 @@ public class BatallaViewController implements Initializable {
 	    // con esta propiedad se actualiza la lista de personajes al cerrar la ventana
 	    stage.showingProperty().addListener((obs, oldValue, newValue) -> {
 		if (!newValue) {
+		    // actualizar listas y estados de botones
 		    updateListas();
 		    estadoBotones();
 		}
@@ -380,17 +502,17 @@ public class BatallaViewController implements Initializable {
     /**
      * Open Git Hub.
      * <p>
-     * Abre ventana en el navegador predeterminado del sistema con la direccion de
-     * GitHub del proyecto
+     * Al dal click en el link abre ventana en el navegador predeterminado del
+     * sistema con la direccion de GitHub del proyecto.
      * </p>
      *
      * @param event the event
      */
     @FXML
     void openGitHub(ActionEvent event) {
-	//direccion del repositorio
+	// direccion del repositorio
 	String url = "https://github.com/mattyys/lotrGame.git";
-	//chequea si se puede abrir el navegador
+	// chequea si se puede abrir el navegador
 	try {
 	    if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
 		Desktop.getDesktop().browse(new URI(url));
@@ -404,7 +526,7 @@ public class BatallaViewController implements Initializable {
     /**
      * Update listas.
      * <p>
-     * Carga las listas de heroes y bestias y actualiza las modificaciones
+     * Carga las listas de heroes y bestias y actualiza las modificaciones.
      * </p>
      */
     public void updateListas() {
@@ -425,8 +547,8 @@ public class BatallaViewController implements Initializable {
      * Elimina un personaje de la lista chequeando que tipo de personaje es
      * </p>
      *
-     * @param index     the index
-     * @param personaje the personaje
+     * @param index     the index del item seleccionado
+     * @param personaje the personaje a eliminar
      */
     private void eliminarPersonaje(int index, Personaje personaje) {
 
@@ -453,9 +575,9 @@ public class BatallaViewController implements Initializable {
      * chequea si es heroe o bestia y que boton se presiono.
      * </p>
      *
-     * @param index     the index
-     * @param accion    the accion
-     * @param personaje the personaje
+     * @param index     the index del item seleccionado
+     * @param accion    the accion que se realizara
+     * @param personaje the personaje a posicionar
      */
     private void posicionarItem(int index, String accion, Personaje personaje) {
 	// se chequea que boton se presiono
@@ -564,8 +686,8 @@ public class BatallaViewController implements Initializable {
      * Abre la ventana de Resultado, pasando la lista y el nombre a mostrar
      * </p>
      *
-     * @param listado the listado
-     * @param nombre  the nombre
+     * @param listado the listado de resultados a mostrar
+     * @param nombre  the nombre del titulo de los resultados
      */
     public void llamarResultado(List<String> listado, String nombre) {
 	// abrir ventana para mostrar resultado
@@ -609,10 +731,6 @@ public class BatallaViewController implements Initializable {
 	try {
 
 	    Parent iRoot = loader.load();
-	    ImagenBatallaController imagenBatallaController = loader.getController();
-	    imagenBatallaController.setBatallaController(BATALLA_CONTROLLER);
-	    imagenBatallaController.setBatallaViewController(this);
-
 	    Scene scene = new Scene(iRoot);
 	    Stage stage = new Stage();
 	    stage.setTitle("Lucha");

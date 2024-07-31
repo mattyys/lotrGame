@@ -5,6 +5,25 @@
 	<groupId>org.proyectofinal</groupId>
 	<artifactId>lotrgame</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Lord of the Rings - Game</name>
+	<description>
+		Proyecto final del curso Programacion JAVA Certificacion OCP.
+		El proyecto consiste en un juego en donde se pueden crear personajes de
+		la
+		saga de El Señor de los Anillos. Donde se destaca la facción de Heroes y
+		Bestias, cada uno con sus propias habilidades y características. Dentro
+		de
+		los Heroes tenemos razas como Humanos, Elfos, Enanos, Magos y Hobbits.
+		En el
+		grupo de las Bestias tenemos Orcos, Trasgos, Uruk-hai y Nazgul.
+		Funcionalidades:
+		El juego permite crear personajes, guardarlos en una lista, eliminarlos,
+		cambiar de posicion para su futuro enfrentamiento, y finalmente iniciar
+		una
+		batalla. Tambien se pueden exportar los resultados de las batallas a un
+		archivo txt.
+	</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,8 +113,9 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
-<!--					<mainClass>lotrgame.Aplicacion</mainClass>
-para ejecutarla aplicacion en modo consola, descomentar la linea de arriba y coment la de abajo y ejecutar
+					<!--					<mainClass>lotrgame.Aplicacion</mainClass>
+para ejecutarla aplicacion en modo consola, descomentar la linea de arriba y
+					coment la de abajo y ejecutar
 el comando mvn exec:java o maven buil exec:java
 -->
 					<mainClass>lotrgame.Main</mainClass>
@@ -120,8 +140,7 @@ el comando mvn exec:java o maven buil exec:java
 				</executions>
 			</plugin>
 
-<!-- 
-	
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -130,13 +149,12 @@ el comando mvn exec:java o maven buil exec:java
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
 							<mainClass>lotrgame.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
--->
+
 
 			<!--
 			https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
@@ -156,10 +174,22 @@ el comando mvn exec:java o maven buil exec:java
 							</outputFile>
 							<transformers>
 								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>lotrgame.Main</mainClass>
 								</transformer>
 							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
 						</configuration>
 					</execution>
 				</executions>
@@ -187,9 +217,14 @@ el comando mvn exec:java o maven buil exec:java
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
 					<show>public</show>
+					<doclint>none</doclint>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.6.2</version>
 			</plugin>
 		</plugins>
 	</reporting>

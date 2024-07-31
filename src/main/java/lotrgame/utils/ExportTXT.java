@@ -6,8 +6,12 @@ import java.util.List;
 
 import javafx.stage.FileChooser;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ExportTXT.
+ * <p>
+ * Clase que permite exportar una lista de Strings a un archivo .txt
+ * </p>
  */
 public class ExportTXT {
 

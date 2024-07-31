@@ -1,4 +1,12 @@
 Manifest-Version: 1.0
 Build-Jdk-Spec: 21
+Class-Path: lombok-1.18.32.jar javafx-base-23-ea+22.jar javafx-base-23-e
+ a+22-linux.jar javafx-controls-23-ea+22.jar javafx-controls-23-ea+22-li
+ nux.jar javafx-graphics-23-ea+22.jar javafx-graphics-23-ea+22-linux.jar
+  javafx-fxml-23-ea+22.jar javafx-fxml-23-ea+22-linux.jar javafx-media-2
+ 3-ea+22.jar javafx-media-23-ea+22-linux.jar jfoenix-9.0.10.jar ikonli-c
+ ore-12.3.1.jar ikonli-javafx-12.3.1.jar ikonli-materialdesign2-pack-12.
+ 3.1.jar
+Main-Class: lotrgame.Main
 Created-By: Maven Integration for Eclipse
 

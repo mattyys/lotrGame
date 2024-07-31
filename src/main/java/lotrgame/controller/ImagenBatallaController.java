@@ -1,94 +1,35 @@
 package lotrgame.controller;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-//import javafx.scene.image.Image;
+
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-
+// TODO: Auto-generated Javadoc
 /**
  * The Class ImagenBatallaController.
+ * <p>
+ * Controlador de la vista de la imagen(gif) de la batalla.
+ * </p>
  */
-public class ImagenBatallaController implements Initializable {
+public class ImagenBatallaController {
 
-    /** The img imagen. */
+    /**
+     * The img imagen.
+     * <p>
+     * Contenedor de la imagen(gif) de la batalla.
+     * </p>
+     */
     @FXML
     private ImageView img_imagen;
 
-    /** The anchorpane root. */
+    /**
+     * The anchorpane root.
+     * <p>
+     * Panel principal de la vista de la imagen de la batalla
+     * </p>
+     */
     @FXML
     private AnchorPane apRoot;
-
-    /** The batalla view controller. */
-    BatallaViewController batallaViewController;
-    
-    /** The batalla controller. */
-    BatallaController batallaController;
-
-    /** The lista. */
-    List<String> lista;
-    
-    /** The nombre. */
-    String nombre;
-
-    /**
-     * Sets the batalla view controller.
-     *
-     * @param batallaViewController the new batalla view controller
-     */
-    public void setBatallaViewController(BatallaViewController batallaViewController) {
-	this.batallaViewController = batallaViewController;
-
-    }
-
-    /**
-     * Sets the batalla controller.
-     *
-     * @param batallaController the new batalla controller
-     */
-    public void setBatallaController(BatallaController batallaController) {
-	this.batallaController = batallaController;
-    }
-
-    /**
-     * Sets the lista.
-     *
-     * @param lista the new lista
-     */
-    public void setLista(List<String> lista) {
-	this.lista = lista;
-
-    }
-
-    /**
-     * Sets the nombre.
-     *
-     * @param nombre the new nombre
-     */
-    public void setNombre(String nombre) {
-	this.nombre = nombre;
-    }
-
-    /**
-     * Initialize.
-     * 
-     * Inicializa la imagen de la batalla
-     *
-     * @param location the location
-     * @param resources the resources
-     */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-	//img_imagen.setImage(new Image("/video/pelea.gif"));
-	
-	//se carga la imagen directamente en el fxml
-    }
-
-
 
 }

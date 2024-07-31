@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,20 +15,44 @@ import javafx.scene.control.Label;
 import lotrgame.utils.ExportTXT;
 import lotrgame.utils.MyAlerta;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ResultadoViewController.
+ * <p>
+ * Clase controladora del formulario(vista) para presentar los resultados de la
+ * batalla. Se Utiliza para mostrar tanto los resultados de la batalla como la
+ * lista de los personajes eliminados. Gestiona la exportacion a un archivo de
+ * texto de los resultados mostrados.
+ * </p>
  */
 public class ResultadoViewController implements Initializable {
 
-    /** The boton exportar. */
+    /**
+     * The boton exportar.
+     * <p>
+     * Boton encargado de ejecutar la exportacion de la lista de resultados a un
+     * archivo de texto.
+     * </p>
+     */
     @FXML
     private JFXButton btn_exportar;
 
-    /** The label nombre. */
+    /**
+     * The label nombre.
+     * <p>
+     * Este label muestra el nombre del tipo de listado de la vista de resultados.
+     * </p>
+     */
     @FXML
     private Label lb_nombre;
 
-    /** The listview detalle lucha. */
+    /**
+     * The listview detalle lucha.
+     * <p>
+     * En este listview se muestra la lista de los resultados de la lucha o la lista
+     * de los personajes eliminados.
+     * </p>
+     */
     @FXML
     private JFXListView<String> lv_detalle_lucha;
 
@@ -53,8 +78,8 @@ public class ResultadoViewController implements Initializable {
      * On export.
      * 
      * <p>
-     * Ejecuta el metodo de exportar la lista de la vista de resultados a un archivo
-     * de texto
+     * Llama al metodo estatico exportarLista de la clase ExportTXT para exportar el
+     * contenido del listview a un archivo de texto.
      * </p>
      *
      * @param event the event
@@ -78,8 +103,8 @@ public class ResultadoViewController implements Initializable {
      * nombre del tipo de listado.
      * </p>
      *
-     * @param lista  the lista
-     * @param nombre the nombre
+     * @param lista  the lista (listado de resultados a mostrar).
+     * @param nombre the nombre (nombre del tipo de listado).
      */
     public void cargarResultado(List<String> lista, String nombre) {
 	lb_nombre.setText(nombre);

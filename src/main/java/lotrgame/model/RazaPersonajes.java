@@ -2,39 +2,96 @@ package lotrgame.model;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Enum RazaPersonajes.
+ * <p>
+ * Enum que contiene las razas de los personajes
+ * </p>
  */
 public enum RazaPersonajes {
 
-    /** The humano. */
     // Heroes
+    /**
+     * The humano.
+     * <p>
+     * Perteneciente a los heroes, representa a los humanos.
+     * </p>
+     */
     HUMANO("Humano"),
-    /** The elfo. */
+    /**
+     * The elfo.
+     * <p>
+     * Perteneciente a los heroes, representa a los elfos.
+     * </p>
+     */
     ELFO("Elfo"),
-    /** The enano. */
+    /**
+     * The enano.
+     * <p>
+     * Perteneciente a los heroes, representa a los enanos.
+     * </p>
+     */
     ENANO("Enano"),
-    /** The hobbit. */
+    /**
+     * The hobbit.
+     * <p>
+     * Perteneciente a los heroes, representa a los hobbits.
+     * </p>
+     */
     HOBBIT("Hobbit"),
-    /** The mago. */
+    /**
+     * The mago.
+     * <p>
+     * Perteneciente a los heroes, representa a los magos.
+     * </p>
+     */
     MAGO("Mago"),
 
-    /** The orco. */
     // Bestias
+    /**
+     * The orco.
+     * <p>
+     * Perteneciente a las bestias, representa a los orcos.
+     * </p>
+     */
     ORCO("Orco"),
-    /** The trasgo. */
+    /**
+     * The trasgo.
+     * <p>
+     * Pereneciente a las bestias, representa a los trasgos.
+     * </p>
+     */
     TRASGO("Trasgo"),
-    /** The urukhais. */
+    /**
+     * The urukhais.
+     * <p>
+     * Perteneciente a las bestias, representa a los uruk-hais.
+     * </p>
+     */
     URUKHAIS("Uruk-hais"),
-    /** The nazgul. */
+    /**
+     * The nazgul.
+     * <p>
+     * Perteneciente a las bestias, representa a los nazgul.
+     * </p>
+     */
     NAZGUL("Nazgul");
 
-    /** The nombre raza. */
+    /**
+     * The nombre raza.
+     * <p>
+     * Variabla que almacena el nombre de la raza.
+     * </p>
+     */
     private String nombreRaza;
 
     /**
      * Instantiates a new raza personajes.
-     *
+     * <p>
+     * Inicializa la raza con el nombre de la misma.
+     * </p>
+     * 
      * @param nombreRaza the nombre raza
      */
     private RazaPersonajes(String nombreRaza) {
@@ -43,7 +100,9 @@ public enum RazaPersonajes {
 
     /**
      * Gets the nombre raza.
-     *
+     * <p>
+     * Devuelve el nombre de la raza.
+     * </p>
      * @return the nombre raza
      */
     public String getNombreRaza() {
@@ -68,28 +127,28 @@ public enum RazaPersonajes {
 	return null;
     }
 
+    // Ltado raza de Heroes
     /**
      * Gets the raza heroes.
      * <p>
-     * Obtener las razas de los heroes
+     * Devuelve la lista de razas de los heroes.
      * </p>
      * 
      * @return the raza heroes
      */
-    // Ltado raza de Heroes
     public static List<RazaPersonajes> getRazaHeroes() {
 	return List.of(HUMANO, ELFO, ENANO, HOBBIT, MAGO);
     }
 
+    // Ltado raza de Bestias
     /**
      * Gets the raza bestias.
      * <p>
-     * Obtener las razas de las bestias
+     * Devuelve la lista de razas de las bestias.
      * </p>
      * 
      * @return the raza bestias
      */
-    // Ltado raza de Bestias
     public static List<RazaPersonajes> getRazaBestias() {
 	return List.of(ORCO, TRASGO, URUKHAIS, NAZGUL);
     }

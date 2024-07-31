@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.proyectofinal</groupId>
+  <artifactId>lotrgame</artifactId>
+  <name>Lord of the Rings - Game</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>Proyecto final del curso Programacion JAVA Certificacion OCP.
+		El proyecto consiste en un juego en donde se pueden crear personajes de
+		la
+		saga de El Señor de los Anillos. Donde se destaca la facción de Heroes y
+		Bestias, cada uno con sus propias habilidades y características. Dentro
+		de
+		los Heroes tenemos razas como Humanos, Elfos, Enanos, Magos y Hobbits.
+		En el
+		grupo de las Bestias tenemos Orcos, Trasgos, Uruk-hai y Nazgul.
+		Funcionalidades:
+		El juego permite crear personajes, guardarlos en una lista, eliminarlos,
+		cambiar de posicion para su futuro enfrentamiento, y finalmente iniciar
+		una
+		batalla. Tambien se pueden exportar los resultados de las batallas a un
+		archivo txt.</description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <mainClass>lotrgame.Main</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <executions>
+          <execution>
+            <id>default-cli</id>
+            <configuration>
+              <launcher>launcher</launcher>
+              <mainClass>lotrgame.Main</mainClass>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>lotrgame.Main</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>lotrgame.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-shaded.jar</outputFile>
+              <transformers>
+                <transformer />
+                <transformer>
+                  <mainClass>lotrgame.Main</mainClass>
+                </transformer>
+              </transformers>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <show>private</show>
+          <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <show>public</show>
+          <doclint>none</doclint>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.6.2</version>
+      </plugin>
+    </plugins>
+  </reporting>
+  <properties>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <javafx.version>23-ea+22</javafx.version>
+  </properties>
+</project>

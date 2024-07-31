@@ -46,5 +46,5 @@ mvn clean package
 ### Ejecutar Proyecto MAVEN
 
 ```
-mvn run:javafx
+mvn javafx:run
 ```

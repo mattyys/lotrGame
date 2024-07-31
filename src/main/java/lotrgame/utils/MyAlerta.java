@@ -5,37 +5,74 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
-
+// TODO: Auto-generated Javadoc
 /**
  * The Class MyAlerta.
+ * <p>
+ * Clase que permite mostrar alertas personalizadas con botones de confirmación
+ * personalizados "Si - No"
+ * </p>
  */
 public class MyAlerta {
-    
-    /** The titulo. */
+
+    /**
+     * The titulo.
+     * <p>
+     * Variable que almacena el titulo de la alerta
+     * <p>
+     */
     private String titulo;
-    
-    /** The header. */
+
+    /**
+     * The header.
+     * <p>
+     * Variable que almacena el encabezado de la alerta
+     * </p>
+     */
     private String header;
-    
-    /** The mensaje. */
+
+    /**
+     * The mensaje.
+     * <p>
+     * Variable que almacena el mensaje informativo a mostrar en la alerta
+     * </p>
+     */
     private String mensaje;
-    
-    /** The tipo. */
+
+    /**
+     * The tipo.
+     * <p>
+     * Variable que almacena el tipo de alerta que se va a mostrar
+     * </p>
+     */
     private Alert.AlertType tipo;
-    
-    /** The Constant BTN_SI. */
+
+    /**
+     * The Constant BTN_SI.
+     * <p>
+     * Constante que almacena el boton de confirm "Si".
+     * </p>
+     */
     public static final ButtonType BTN_SI = new ButtonType("Si");
-    
-    /** The Constant BTN_NO. */
+
+    /**
+     * The Constant BTN_NO.
+     * <p>
+     * Constante que almacena el boton de confirmación "No"
+     * </p>
+     */
     public static final ButtonType BTN_NO = new ButtonType("No");
-    
+
     /**
      * Instantiates a new my alerta.
+     * <p>
+     * Constructor que recibe los parametros para mostrar la alerta
+     * </p>
      *
-     * @param titulo the titulo
-     * @param header the header
-     * @param mensaje the mensaje
-     * @param tipo the tipo
+     * @param titulo  the titulo de la alerta
+     * @param header  the header (encabezado) de la alerta
+     * @param mensaje the mensaje informativo de la alerta
+     * @param tipo    the tipo de alerta a mostrar
      */
     public MyAlerta(String titulo, String header, String mensaje, Alert.AlertType tipo) {
 	this.titulo = titulo;
@@ -43,23 +80,24 @@ public class MyAlerta {
 	this.mensaje = mensaje;
 	this.tipo = tipo;
     }
-    
+
     /**
      * Mostrar.
-     * <p>Alert personalizado con botones de confirmación personalizados "Si - No"</p> 
+     * <p>
+     * Ejecuta la alerta y retorna el tipo de boton seleccionado
+     * </p>
      *
      * @return the optional
      */
     public Optional<ButtonType> mostrar() {
 	Alert alert = new Alert(tipo);
 	if (tipo == Alert.AlertType.CONFIRMATION) {
-	    alert.getButtonTypes().setAll(BTN_NO,BTN_SI);
+	    alert.getButtonTypes().setAll(BTN_NO, BTN_SI);
 	}
 	alert.setTitle(titulo);
 	alert.setHeaderText(header);
 	alert.setContentText(mensaje);
 	return alert.showAndWait();
     }
-    
 
 }
