@@ -20,6 +20,7 @@
 		una
 		batalla. Tambien se pueden exportar los resultados de las batallas a un
 		archivo txt.</description>
+  <url>https://github.com/mattyys/lotrGame.git</url>
   <build>
     <plugins>
       <plugin>
@@ -114,7 +115,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <show>public</show>
+          <show>private</show>
           <doclint>none</doclint>
         </configuration>
       </plugin>

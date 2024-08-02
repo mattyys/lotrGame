@@ -24,6 +24,7 @@
 		batalla. Tambien se pueden exportar los resultados de las batallas a un
 		archivo txt.
 	</description>
+	<url>https://github.com/mattyys/lotrGame.git</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -217,7 +218,7 @@ el comando mvn exec:java o maven buil exec:java
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<show>public</show>
+					<show>private</show>
 					<doclint>none</doclint>
 				</configuration>
 			</plugin>

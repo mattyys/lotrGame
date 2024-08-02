@@ -208,7 +208,7 @@ public class BatallaViewController implements Initializable {
     /**
      * The resultado batalla.
      * <p>
-     * Contatnte que guarda el nombre de la ventana de resultado de la batalla
+     * Constatnte que guarda el nombre de la ventana de resultado de la batalla.
      * </p>
      */
     public final String RESULTADO_BATALLA = "Resultado Batalla";
@@ -216,7 +216,7 @@ public class BatallaViewController implements Initializable {
     /**
      * The personajes eliminados.
      * <p>
-     * Cosntante que guarda el nombre de la ventana de personajes eliminados
+     * Constante que guarda el nombre de la ventana de personajes eliminados.
      * </p>
      */
     public final String PERSONAJES_ELIMINADOS = "Personajes Eliminados";
